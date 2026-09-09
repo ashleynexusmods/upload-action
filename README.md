@@ -11,7 +11,7 @@ This GitHub Action uploads a new version of a file to NexusMods using the NexusM
 | Name                         | Description                                                                                                  | Required | Default  |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------ | -------- | -------- |
 | api_key                      | [API key](https://www.nexusmods.com/settings/api-keys)                                                       | Yes      |          |
-| file_id                      | ID of the file to add a version to (See [How to find the file ID](#how-to-find-the-file-id))                 | Yes      |          |
+| file_id                      | ID of the file to add a version to (See [How to find the file ID](#how-to-find-the-file-id--mod-id))         | Yes      |          |
 | filename                     | Name of the zip file to upload                                                                               | Yes      |          |
 | version                      | Version string for the uploaded file version (e.g., 1.0.0)                                                   | Yes      |          |
 | display_name                 | Display name for the uploaded file version                                                                   | No       | filename |
@@ -22,7 +22,7 @@ This GitHub Action uploads a new version of a file to NexusMods using the NexusM
 | allow_mod_manager_download   | Whether mod manager downloads are enabled for this file                                                      | No       | true     |
 | show_requirements_pop_up     | Whether to show a requirements popup when downloading this file                                              | No       | false    |
 | update_mod_version           | Whether to update the mod's version to match this file's version                                             | No       | false    |
-| mod_id                       | Mod ID on Nexus Mods. Required if `changelog` is set (See [How to find the mod ID](#how-to-find-the-mod-id)) | No       |          |
+| mod_id                       | Mod ID on Nexus Mods. Required if `changelog` is set (See [How to find the mod ID](#how-to-find-the-file-id--mod-id)) | No       |          |
 | changelog                    | Changelog text to add for this version. Requires `mod_id` to be set                                          | No       |          |
 
 ## Outputs
@@ -54,8 +54,6 @@ First, use another action to create a zip file. Then, use this action to upload 
 ## How to find the file ID & mod ID
 
 To get a file ID or mod ID to use in this action, you need to have created a mod page on Nexus Mods and uploaded at least one file. The IDs can be found by checking the "Advanced" option in [the Files tab of the public-facing mod page](docs/images/modpage.png), or in the [edit menu of the Manage Files page](docs/images/uploadform.png).
-
-The File ID is labelled `Group ID` and the Mod ID is labelled `Unique Mod ID`.
 
 ## Development
 
